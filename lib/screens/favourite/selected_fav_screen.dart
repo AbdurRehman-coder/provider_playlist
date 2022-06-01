@@ -26,7 +26,7 @@ class SelectedFavScreen extends StatelessWidget {
         children: [
           Consumer<FavouriteProvider>(
             builder: (context, snapshot, child) {
-              print('items list: ${snapshot.selectedItemsList.length}');
+
               return Expanded(
                 child: ListView.builder(
                   // shrinkWrap: true,

@@ -40,11 +40,6 @@ class _FavouriteItemScreenState extends State<FavouriteItemScreen> {
                     itemBuilder: (context, index) {
                       return InkWell(
                         onTap: () {
-                          // if(isFav == true) {
-                          //   isFav = false;
-                          // } else {
-                          //   isFav = true;
-                          // }
                           if(snapshot.selectedItemsList.contains(index)) {
                             snapshot.removeItemsFromList(index);
                           } else {
