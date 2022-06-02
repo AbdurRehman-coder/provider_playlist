@@ -7,6 +7,7 @@ import 'package:provider_playlist/provider/theme_changer_provider.dart';
 import 'package:provider_playlist/screens/example_one_screen.dart';
 import 'package:provider_playlist/screens/favourite/favourite_item_screen.dart';
 import 'package:provider_playlist/screens/home_page.dart';
+import 'package:provider_playlist/screens/stateless_valueNotifier.dart';
 import 'package:provider_playlist/screens/theme_changer_screen.dart';
 
 void main() {
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
       ],
       child: Builder(
         builder: (BuildContext context) {
+          print('builder called');
           var themeProvider = Provider.of<ThemeChangerProvider>(context);
           return MaterialApp(
             debugShowCheckedModeBanner: false,
@@ -48,7 +50,7 @@ class MyApp extends StatelessWidget {
                 color: Colors.indigo
               ),
             ),
-            home: ThemeChangeScreen(),
+            home: ValueNotifierWidget(),
           );
         },
 
