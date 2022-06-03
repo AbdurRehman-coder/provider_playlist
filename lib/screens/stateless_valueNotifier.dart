@@ -3,7 +3,7 @@ class ValueNotifierWidget extends StatelessWidget {
    ValueNotifierWidget({Key? key}) : super(key: key);
 
    ValueNotifier<int> _counter = ValueNotifier<int>(0);
-   ValueNotifier<bool> passwordToggle = ValueNotifier<bool>(false);
+   ValueNotifier<bool> passwordToggle = ValueNotifier<bool>(true);
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +16,7 @@ class ValueNotifierWidget extends StatelessWidget {
           ValueListenableBuilder<bool>(
             valueListenable: passwordToggle,
             builder: (context, snapshot, child) {
+              print('snapshot Value: $snapshot');
               return TextFormField(
                 // enabled: passwordToggle.value,
                 obscureText: snapshot,
@@ -23,10 +24,12 @@ class ValueNotifierWidget extends StatelessWidget {
                   hintText: 'Password',
                   suffix: InkWell(
                     onTap: (){
+                      /// toggle the value
                       passwordToggle.value = !passwordToggle.value;
-                      print('snapshot: ${snapshot}');
+                      // snapshot = !snapshot;
+
                     },
-                      child: Icon(  passwordToggle.value ?  Icons.visibility_off :
+                      child: Icon( snapshot ?  Icons.visibility_off :
                           Icons.visibility),
                   ),
                 ),

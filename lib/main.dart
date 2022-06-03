@@ -4,9 +4,11 @@ import 'package:provider_playlist/provider/count_provider.dart';
 import 'package:provider_playlist/provider/example_one_provider.dart';
 import 'package:provider_playlist/provider/favourite_provider.dart';
 import 'package:provider_playlist/provider/theme_changer_provider.dart';
+import 'package:provider_playlist/provider/toggle_provider.dart';
 import 'package:provider_playlist/screens/example_one_screen.dart';
 import 'package:provider_playlist/screens/favourite/favourite_item_screen.dart';
 import 'package:provider_playlist/screens/home_page.dart';
+import 'package:provider_playlist/screens/password_toggle_scree.dart';
 import 'package:provider_playlist/screens/stateless_valueNotifier.dart';
 import 'package:provider_playlist/screens/theme_changer_screen.dart';
 
@@ -26,6 +28,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => ExampleOneProvider()),
         ChangeNotifierProvider(create: (context) => FavouriteProvider()),
         ChangeNotifierProvider(create: (context) => ThemeChangerProvider()),
+        ChangeNotifierProvider(create: (context) => ToggleProvider()),
       ],
       child: Builder(
         builder: (BuildContext context) {
@@ -50,7 +53,7 @@ class MyApp extends StatelessWidget {
                 color: Colors.indigo
               ),
             ),
-            home: ValueNotifierWidget(),
+            home: ToggleProviderScreen(),
           );
         },
 
